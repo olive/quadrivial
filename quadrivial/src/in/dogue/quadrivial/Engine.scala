@@ -5,13 +5,15 @@ import com.deweyvm.gleany.{GleanyGame, AssetLoader}
 import in.dogue.antiqua.graphics.Tileset
 import in.dogue.quadrivial.input.Controls
 import in.dogue.quadrivial.modes.{GameMode, Mode}
+import scala.util.Random
 
 class Engine {
   val cols = Game.Cols
   val rows = Game.Rows
   val tsize = Game.TileSize
+  val rand = new Random()
   val m:Mode = {
-    GameMode.create.toMode
+    GameMode.create(cols, rows, rand).toMode
   }
   var mode:Mode = m
   val ts = new Tileset(16, 16, tsize, tsize, AssetLoader.loadTexture("16x16"))
