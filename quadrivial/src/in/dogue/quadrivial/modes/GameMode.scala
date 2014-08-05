@@ -2,15 +2,15 @@ package in.dogue.quadrivial.modes
 
 import in.dogue.antiqua.graphics.TileRenderer
 
-object TitleMode {
-  def create = TitleMode()
+object GameMode {
+  def create = GameMode()
 }
 
-case class TitleMode private () {
+case class GameMode private () {
   def update = this.toMode
   def draw(tr:TileRenderer):TileRenderer = {
     tr
   }
 
-  def toMode:Mode = Mode[TitleMode](_.update, _.draw, this)
+  def toMode:Mode = Mode[GameMode](_.update, _.draw, this)
 }

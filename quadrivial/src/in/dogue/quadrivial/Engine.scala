@@ -4,14 +4,14 @@ import in.dogue.antiqua.graphics.{TileRenderer, Renderer}
 import com.deweyvm.gleany.{GleanyGame, AssetLoader}
 import in.dogue.antiqua.graphics.Tileset
 import in.dogue.quadrivial.input.Controls
-import in.dogue.quadrivial.modes.{TitleMode, Mode}
+import in.dogue.quadrivial.modes.{GameMode, Mode}
 
 class Engine {
   val cols = Game.Cols
   val rows = Game.Rows
   val tsize = Game.TileSize
   val m:Mode = {
-    TitleMode.create.toMode
+    GameMode.create.toMode
   }
   var mode:Mode = m
   val ts = new Tileset(16, 16, tsize, tsize, AssetLoader.loadTexture("16x16"))
