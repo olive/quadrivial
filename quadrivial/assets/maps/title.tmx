@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="26" height="4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
+  <image source="../../../../Md_curses_16x16.png" width="256" height="256"/>
+ </tileset>
+ <layer name="tiles" width="26" height="4">
+  <data encoding="csv">
+223,224,224,222,222,1,222,220,224,222,220,224,222,220,224,222,222,222,223,223,1,220,224,222,222,1,
+223,1,222,222,222,1,222,220,221,222,222,1,222,220,221,222,222,222,223,223,1,220,221,222,222,1,
+223,221,221,222,220,221,222,222,1,222,220,221,222,222,223,1,222,223,222,223,1,222,1,222,220,221,
+1,1,222,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+</map>

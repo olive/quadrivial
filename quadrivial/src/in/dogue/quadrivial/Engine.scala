@@ -4,7 +4,7 @@ import in.dogue.antiqua.graphics.{TileRenderer, Renderer}
 import com.deweyvm.gleany.{GleanyGame, AssetLoader}
 import in.dogue.antiqua.graphics.Tileset
 import in.dogue.quadrivial.input.Controls
-import in.dogue.quadrivial.modes.{GameMode, Mode}
+import in.dogue.quadrivial.modes.{BoardMode, TitleMode, Mode}
 import scala.util.Random
 
 class Engine {
@@ -13,7 +13,8 @@ class Engine {
   val tsize = Game.TileSize
   val rand = new Random()
   val m:Mode = {
-    GameMode.create(cols, rows, rand).toMode
+    val gm = BoardMode.create(cols, rows, rand)
+    TitleMode.create(cols, rows, gm, rand).toMode
   }
   var mode:Mode = m
   val ts = new Tileset(16, 16, tsize, tsize, AssetLoader.loadTexture("16x16"))
