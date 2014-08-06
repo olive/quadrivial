@@ -8,6 +8,7 @@ object Game {
   val Cols = 47
   val Rows = 47
   val TileSize = 16
+  val Version = "0.9.0"
 }
 class Game(initializer: GleanyInitializer) extends GleanyGame(initializer) {
   private lazy val engine = new Engine()
