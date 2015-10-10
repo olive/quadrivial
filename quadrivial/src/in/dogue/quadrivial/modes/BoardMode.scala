@@ -17,6 +17,7 @@ import in.dogue.quadrivial.audio.SoundManager
 
 object BoardMode {
   def create(cols:Int, rows:Int, r:Random) = {
+    SoundManager.song.play()
     val size = 9
     val sp = Spinner.create(cols, rows, Recti(cols/2-size/2, rows/2-size/2, size, size), 0.1, r)
     def mk(code:Code) = code.mkTile(Color.Black, Color.White)
@@ -56,6 +57,7 @@ case class BoardMode(cols:Int, rows:Int, size:Int, theta:Double, pAngle:Double, 
     val newState = if (bars.exists(b => inRect(b) && intersects((cols/2, rows/2), b))) {
       if (state == Moving) {
         SoundManager.die.play()
+        SoundManager.song.pause()
       }
       if (state == Moving && t > hiscore) {
 
